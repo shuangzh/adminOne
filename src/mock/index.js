@@ -21,4 +21,32 @@ const user_menu = [
 Mock.mock("/useradmin/getmenu",'get', user_menu)
 
 
+
+const users = [
+    {id:1 , account:'zhoushuang', name:'zhou',  disabled: 0 , role: {id:1, name:'admin'}},
+    {id:2 , account:'shuangzh', name:'zhou',  disabled: 0 , role: {id:1, name:'admin'}},    
+]
+
+Mock.mock("/useradmin/getusers",'get', users)
+
+const roles = [
+    {id:1, name:'admin', disabled: 0, description:'管理员', permissions:[ {id:1, perm:'user:admin'}] }
+]
+Mock.mock("/useradmin/getroles", 'get', roles)
+
+
+const perms= [
+    {id:1, perm:'user:admin', disabled:0, description:'添加修改用户'}
+]
+Mock.mock('/useradmin/getperms','get', perms)
+
+
+const menus=[
+    {id:1, title:'用户管理',target:'userman', description:'用户管理', level:'1', permission:{id:1, perm:'user:admin'}}
+]
+
+Mock.mock('/useradmin/getallmenu','get',menus)
+
+
+
 export default Mock;

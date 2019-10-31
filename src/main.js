@@ -12,8 +12,8 @@ Vue.use(ElementUI)
 Vue.prototype.$axios = axios
 
 new Vue({
+  router,
   store,
   render: h => h(App),
-  router
 }).$mount('#app')
 

@@ -23,11 +23,20 @@
 
 import roleman from './RoleMan'
 import userman from './UserMan'
+import permman from './PermMan'
+import menuman from './MenuMan'
+
+const welcome= {
+  template:'<div><h1>Welcome</h1></div>'
+}
 
 export default {
   components:{
     roleman,
-    userman
+    userman,
+    permman,
+    menuman,
+    'welcome':welcome
   },
 
   data() {
@@ -107,6 +116,9 @@ export default {
       // }
     }
   },
+  created(){
+    this.addtab('欢迎使用', 'welcome')
+  }
   // watch: {
   //   $route(to, from) {
   //     console.log("to:--" + to.path);

@@ -1,11 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/HelloWorld'
+
 import LoginPage from '@/components/LoginPage'
 import MainPage from '@/components/MainPage'
 
-import UerMan from '@/components/UserMan'
-import RoleMan from '@/components/RoleMan'
 import E404 from '@/components/E404'
 
 Vue.use(Router)
@@ -44,14 +43,18 @@ const router =   new Router({
             //         }
             //     },
             // ]
+        },
+        {
+            path:"*",
+            component:E404
         }
     ]
 })
 
 router.beforeEach((to, from, next) => {
-    console.log(to)
-    console.log(from)
-    console.log(this)
+    // console.log(to)
+    // console.log(from)
+    // console.log(this)
     next()
 })
 
